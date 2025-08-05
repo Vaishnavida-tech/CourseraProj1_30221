@@ -1,8 +1,4 @@
 # CourseraProj1_30221
-[4:00 pm, 5/8/2025] Tulika Xime: This schema is designed based on the sample data provided in the image.
--- The design has been normalized to ensure data integrity and reduce redundancy,
--- particularly by splitting the sales data into transaction headers and line items.
-
 CREATE TABLE Staff (
     -- Primary Key: 'staff_id' is a unique identifier for each staff member.
     -- SERIAL is used for auto-incrementing integers.
@@ -84,7 +80,7 @@ CREATE TABLE SalesItem (
     -- Foreign Key: Links to the product being sold.
     CONSTRAINT fk_item_product FOREIGN KEY (product_id) REFERENCES Product(product_id)
 );
-[4:00 pm, 5/8/2025] Tulika Xime: erDiagram
+ erDiagram
     SalesOutlet {
         INT sales_outlet_id PK "Primary Key"
         VARCHAR type
@@ -135,7 +131,7 @@ CREATE TABLE SalesItem (
     Customer ||--o{ SalesTransaction : "makes"
     SalesTransaction ||--|{ SalesItem : "contains"
     Product ||--o{ SalesItem : "is sold as"
-[4:00 pm, 5/8/2025] Tulika Xime: erDiagram
+erDiagram
     SalesOutlet {
         INT sales_outlet_id PK "Primary Key"
         VARCHAR type
